@@ -1,7 +1,7 @@
-import React from "react";
+import LiveScoreboard from "../components/LiveScore";
 
 const LiveScoreboardPage = () => {
-  return <div>LiveScoreboardPage</div>;
+  return <LiveScoreboard />;
 };
 
 export default LiveScoreboardPage;

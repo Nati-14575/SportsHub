@@ -11,6 +11,8 @@ const TeamSearchPage = React.lazy(
   () => import("@/features/team/pages/TeamSearchPage")
 );
 
+const HomePage = React.lazy(() => import("@/features/landing"));
+
 const TeamDetailsPage = React.lazy(
   () => import("@/features/team/pages/TeamDetailsPage")
 );
@@ -29,6 +31,14 @@ export const router = createBrowserRouter([
     children: [
       {
         path: ROUTES.HOME,
+        element: (
+          <React.Suspense fallback={<div className="p-10">Loading...</div>}>
+            <HomePage />
+          </React.Suspense>
+        ),
+      },
+      {
+        path: ROUTES.TEAMS,
         element: (
           <React.Suspense fallback={<div className="p-10">Loading...</div>}>
             <TeamSearchPage />

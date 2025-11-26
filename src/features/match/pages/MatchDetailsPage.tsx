@@ -1,7 +1,10 @@
-import React from "react";
+import { useParams } from "react-router";
+import MatchDetails from "../components/MatchDetails";
 
 const MatchDetailsPage = () => {
-  return <div>MatchDetailsPage</div>;
+  const { matchId } = useParams();
+
+  return <MatchDetails matchId={matchId!} />;
 };
 
 export default MatchDetailsPage;

@@ -19,7 +19,7 @@ export default function MainLayout() {
           <ul className="menu menu-horizontal gap-2 lg:gap-4 px-1 font-sans">
             <li>
               <NavLink
-                to="/"
+                to="/teams"
                 className={({ isActive }) =>
                   `btn btn-ghost rounded-btn font-semibold transition-all duration-300 hover:scale-105 gap-2 font-medium ${
                     isActive
@@ -34,7 +34,7 @@ export default function MainLayout() {
 
             <li>
               <NavLink
-                to="/live"
+                to="/live-matches"
                 className={({ isActive }) =>
                   `btn btn-ghost rounded-btn font-semibold transition-all duration-300 hover:scale-105 gap-2 font-medium ${
                     isActive

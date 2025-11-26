@@ -8,7 +8,7 @@ interface Props {
 export default function TeamCard({ team }: Props) {
   return (
     <Link
-      to={`/team/${team.idTeam}`}
+      to={`/teams/${team.idTeam}`}
       className="group card bg-base-100 dark:bg-base-300 shadow-lg hover:shadow-2xl transition-all duration-300 border border-base-300 dark:border-base-100/20 rounded-2xl overflow-hidden hover:scale-105 hover:-translate-y-2 active:scale-95"
     >
       <figure className="p-6 bg-gradient-to-br from-base-200 via-base-100 to-primary/5 dark:from-base-300 dark:via-base-200 dark:to-primary/10 group-hover:from-primary/10 group-hover:to-secondary/5 transition-all duration-300">

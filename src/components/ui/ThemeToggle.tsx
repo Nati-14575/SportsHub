@@ -1,5 +1,5 @@
 import { toggleTheme } from "@/store/themeSlice";
-import { useAppDispatch, useAppSelector } from "@/app/hooks";
+import { useAppDispatch, useAppSelector } from "@/app/reduxHooks";
 import { SunIcon, MoonIcon } from "lucide-react";
 
 export default function ThemeToggle() {
