@@ -1,6 +1,12 @@
-import { TeamCard } from "./TeamCard";
+import TeamCard from "./TeamCard";
 
-export function ResultsGrid({ query, teams }: { query: string; teams: any[] }) {
+export default function ResultsGrid({
+  query,
+  teams,
+}: {
+  query: string;
+  teams: any[];
+}) {
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-heading font-semibold">

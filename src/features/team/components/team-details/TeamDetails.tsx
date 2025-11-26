@@ -6,13 +6,13 @@ import {
   Youtube,
   type LucideIcon,
 } from "lucide-react";
-import { TeamBanner } from "./TeamBanner";
-import { TeamHeader } from "./TeamHeader";
-import { StadiumCard } from "./StadiumCard";
-import { SocialLinksCard } from "./SocialLinksCard";
-import { DescriptionCard } from "./DescriptionCard";
-import { JerseyCard } from "./JerseyCard";
-import { BackButton } from "@/components/common/BackButton";
+import TeamBanner from "./TeamBanner";
+import TeamHeader from "./TeamHeader";
+import StadiumCard from "./StadiumCard";
+import SocialLinksCard from "./SocialLinksCard";
+import DescriptionCard from "./DescriptionCard";
+import JerseyCard from "./JerseyCard";
+import BackButton from "@/components/common/BackButton";
 
 export interface SocialLink {
   url: string | null | undefined;

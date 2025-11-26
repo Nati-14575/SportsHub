@@ -1,4 +1,4 @@
-export function TeamBanner({ src, alt }: { src: string; alt: string }) {
+export default function TeamBanner({ src, alt }: { src: string; alt: string }) {
   return (
     <div className="w-full h-48 md:h-80 rounded-3xl overflow-hidden shadow-2xl relative group">
       <img

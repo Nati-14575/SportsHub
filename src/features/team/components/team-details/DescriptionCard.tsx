@@ -1,4 +1,8 @@
-export function DescriptionCard({ description }: { description: string }) {
+export default function DescriptionCard({
+  description,
+}: {
+  description: string;
+}) {
   return (
     <div className="card bg-base-100 p-8 shadow-xl border rounded-3xl hover:shadow-2xl transition-all">
       <h2 className="text-2xl font-heading font-semibold mb-6">

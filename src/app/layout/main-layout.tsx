@@ -64,7 +64,7 @@ export default function MainLayout() {
       </main>
 
       {/* Fixed Footer */}
-      <footer className="bg-base-300/30 dark:bg-base-300/10 border-t border-base-300 dark:border-base-100/20 py-6 transition-colors duration-300 mt-auto">
+      <footer className="bg-base-300/30 dark:bg-base-300/10 border-t border-base-500 dark:border-base-100/20 py-6 transition-colors duration-300 mt-auto">
         <div className="max-w-7xl mx-auto px-4 text-center text-base-content/60 dark:text-base-content/40 font-sans">
           <p className="text-sm">
             © 2024 SportsHub. The ultimate sports destination.

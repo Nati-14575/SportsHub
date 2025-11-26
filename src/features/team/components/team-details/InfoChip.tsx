@@ -1,4 +1,4 @@
-export function InfoChip({
+export default function InfoChip({
   icon: Icon,
   value,
   color,

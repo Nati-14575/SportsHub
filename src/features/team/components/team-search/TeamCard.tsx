@@ -5,7 +5,7 @@ interface Props {
   team: Team;
 }
 
-export function TeamCard({ team }: Props) {
+export default function TeamCard({ team }: Props) {
   return (
     <Link
       to={`/team/${team.idTeam}`}

@@ -5,7 +5,7 @@ interface SearchInputProps {
   onChange: (v: string) => void;
 }
 
-export function SearchInput({ value, onChange }: SearchInputProps) {
+export default function SearchInput({ value, onChange }: SearchInputProps) {
   return (
     <div className="relative max-w-2xl mx-auto">
       <div className="relative">

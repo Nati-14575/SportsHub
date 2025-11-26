@@ -1,6 +1,6 @@
 import type { SocialLink } from "./TeamDetails";
 
-export function SocialLinksCard({
+export default function SocialLinksCard({
   links,
   buildUrl,
 }: {

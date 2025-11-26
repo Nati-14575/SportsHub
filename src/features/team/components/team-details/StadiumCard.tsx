@@ -1,7 +1,7 @@
 import { Globe, MapPin, Users } from "lucide-react";
 import type { Team } from "../../types/team.types";
 
-export function StadiumCard({ team }: { team: Team }) {
+export default function StadiumCard({ team }: { team: Team }) {
   return (
     <div className="card bg-base-100 p-6 shadow-xl border rounded-3xl hover:shadow-2xl transition-all">
       <h2 className="text-2xl font-heading font-semibold mb-4 flex items-center gap-3">

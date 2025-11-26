@@ -1,8 +1,8 @@
 import { Calendar, Flag, Shirt } from "lucide-react";
 import type { Team } from "../../types/team.types";
-import { InfoChip } from "./InfoChip";
+import InfoChip from "./InfoChip";
 
-export function TeamHeader({ team }: { team: Team }) {
+export default function TeamHeader({ team }: { team: Team }) {
   return (
     <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 p-6 bg-base-100/80 backdrop-blur-lg rounded-3xl shadow-xl border border-base-300/50">
       {/* Badge */}

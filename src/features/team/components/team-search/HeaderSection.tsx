@@ -1,4 +1,4 @@
-const HeaderSection = () => {
+export default function HeaderSection() {
   return (
     <div className="text-center space-y-4">
       <h1 className="text-4xl lg:text-5xl font-heading font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -9,6 +9,4 @@ const HeaderSection = () => {
       </p>
     </div>
   );
-};
-
-export default HeaderSection;
+}
