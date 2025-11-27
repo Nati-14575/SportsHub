@@ -1,15 +1,17 @@
 import type { Match } from "../../types/match.types";
 import { MatchThumbnail } from "./MatchThumbnail";
 import { LeagueHeader } from "./LeagueHeader";
-
-import { MatchInfoGrid } from "./MatchInfoGrid";
 import { Scoreboard } from "./Scoreboard/Scoreboard";
+import { MatchInfoGrid } from "./MatchInfoGrid";
 
-interface Props {
+import { Card } from "@/components/ui/Card";
+import SectionHeader from "@/components/common/SectionHeader";
+
+interface MatchDetailsSectionProps {
   match: Match;
 }
 
-export function MatchDetailsSection({ match }: Props) {
+export function MatchDetailsSection({ match }: MatchDetailsSectionProps) {
   const kickoff =
     match.dateEvent && match.strTime
       ? new Date(`${match.dateEvent}T${match.strTime}`)
@@ -17,7 +19,7 @@ export function MatchDetailsSection({ match }: Props) {
 
   return (
     <div className="space-y-10">
-      {/* Thumbnail */}
+      {/* === Thumbnail section === */}
       {match.strThumb && (
         <MatchThumbnail
           thumbnail={match.strThumb}
@@ -25,19 +27,27 @@ export function MatchDetailsSection({ match }: Props) {
         />
       )}
 
-      {/* League Header */}
+      {/* === League Header === */}
       <LeagueHeader
-        league={match.strLeague ?? null}
+        league={match.strLeague ?? ""}
         leagueBadge={match.strLeagueBadge}
         season={match.strSeason}
         status={match.strStatus}
       />
 
-      {/* Scoreboard */}
-      <Scoreboard match={match} />
+      {/* === Scoreboard === */}
+      <Card className="p-6 shadow-xl border border-base-300/50">
+        <Scoreboard match={match} />
+      </Card>
 
-      {/* Info Grid */}
-      <MatchInfoGrid match={match} kickoff={kickoff} />
+      {/* === Match Info Grid === */}
+      <Card className="p-6 shadow-xl border border-base-300/50">
+        <SectionHeader
+          title="Match Information"
+          subtitle="Venue, kickoff time, competition & more"
+        />
+        <MatchInfoGrid match={match} kickoff={kickoff} />
+      </Card>
     </div>
   );
 }

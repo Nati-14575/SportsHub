@@ -1,11 +1,56 @@
-export const H2 = ({ children }: { children: React.ReactNode }) => (
-  <h2 className="text-3xl font-bold">{children}</h2>
-);
+import { cn } from "@/lib/utils";
+import type { ComponentPropsWithoutRef } from "react";
 
-export const H3 = ({ children }: { children: React.ReactNode }) => (
-  <h3 className="text-2xl font-semibold">{children}</h3>
-);
+type TypographyProps = ComponentPropsWithoutRef<"p"> & {
+  className?: string;
+  as?: React.ElementType;
+  children: React.ReactNode;
+};
 
-export const P = ({ children }: { children: React.ReactNode }) => (
-  <p className="text-base-content/70">{children}</p>
-);
+export function H2({
+  as: Tag = "h2",
+  className,
+  children,
+  ...props
+}: TypographyProps) {
+  return (
+    <Tag
+      className={cn("text-3xl font-bold text-base-content", className)}
+      {...props}
+    >
+      {children}
+    </Tag>
+  );
+}
+
+export function H3({
+  as: Tag = "h3",
+  className,
+  children,
+  ...props
+}: TypographyProps) {
+  return (
+    <Tag
+      className={cn("text-2xl font-semibold text-base-content", className)}
+      {...props}
+    >
+      {children}
+    </Tag>
+  );
+}
+
+export function P({
+  as: Tag = "p",
+  className,
+  children,
+  ...props
+}: TypographyProps) {
+  return (
+    <Tag
+      className={cn("text-base-content/70 leading-relaxed", className)}
+      {...props}
+    >
+      {children}
+    </Tag>
+  );
+}

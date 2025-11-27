@@ -1,35 +1,48 @@
-import { MatchStatusBadge } from "./MatchStatusBadge";
+import { H2, P } from "@/components/ui/Typography";
+import { StatusBadge } from "./StatusBadge";
 
-interface Props {
-  league: string | null;
+interface LeagueHeaderProps {
+  league: string;
   leagueBadge?: string | null;
   season?: string | null;
   status?: string | null;
 }
 
-export function LeagueHeader({ league, leagueBadge, season, status }: Props) {
+export function LeagueHeader({
+  league,
+  leagueBadge,
+  season,
+  status,
+}: LeagueHeaderProps) {
   return (
-    <div className="text-center space-y-4">
-      <div className="flex items-center justify-center gap-4">
-        {leagueBadge && (
+    <div className="flex flex-col items-center text-center space-y-4">
+      {/* League Badge */}
+      {leagueBadge && (
+        <div className="p-3 bg-base-200 rounded-2xl shadow-lg border border-base-300/50">
           <img
             src={leagueBadge}
-            alt="League"
-            className="h-12 w-12 bg-base-200 p-2 rounded-2xl shadow-lg object-contain"
+            alt={`${league} badge`}
+            className="h-14 w-14 object-contain"
+            onError={(e) => {
+              (e.target as HTMLImageElement).className = "h-14 w-14 opacity-40";
+            }}
           />
-        )}
-
-        <div className="text-left">
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            {league}
-          </h2>
-          {season && (
-            <p className="text-base-content/60 font-medium">{season}</p>
-          )}
         </div>
+      )}
+
+      {/* Text Content */}
+      <div className="space-y-1">
+        <H2 className="font-heading text-3xl md:text-4xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          {league}
+        </H2>
+
+        {season && (
+          <P className="text-base-content/70 font-medium">Season {season}</P>
+        )}
       </div>
 
-      <MatchStatusBadge status={status} />
+      {/* Status */}
+      <StatusBadge status={status} />
     </div>
   );
 }
