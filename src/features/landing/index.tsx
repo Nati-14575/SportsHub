@@ -1,4 +1,4 @@
-import { Search, TrendingUp, Users, Star } from "lucide-react";
+import { TrendingUp, Users, Star } from "lucide-react";
 import { NavLink } from "react-router";
 
 export default function HomePage() {
