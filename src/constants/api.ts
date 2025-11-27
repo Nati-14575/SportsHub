@@ -1,6 +1,6 @@
 export const API = {
   TEAMS: {
-    SEARCH: "searchteams.php1",
+    SEARCH: "searchteams.php",
     DETAILS: (id: string) => `lookupteam.php?id=${id}`,
   },
   MATCHES: {

@@ -1,5 +1,5 @@
 import { Outlet, NavLink } from "react-router";
-import ThemeToggle from "@/components/ui/ThemeToggle";
+import ThemeToggle from "@/components/common/ThemeToggle";
 import { ROUTES } from "../../constants/routes";
 
 export default function MainLayout() {

@@ -1,7 +1,7 @@
 import { Card } from "../ui/Card";
 import { H3, P } from "../ui/Typography";
 import { Button } from "../ui/Button";
-import { IconBadge } from "../ui/IconBadge";
+import { IconBadge } from "./IconBadge";
 import { NavLink } from "react-router";
 
 interface FeatureCardProps {
@@ -14,7 +14,7 @@ interface FeatureCardProps {
   buttonText: string;
 }
 
-export function FeatureCard({
+export default function FeatureCard({
   icon,
   title,
   description,

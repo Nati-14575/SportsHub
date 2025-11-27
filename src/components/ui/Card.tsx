@@ -1,26 +1,28 @@
 import { cn } from "@/lib/utils";
 
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+interface CardProps {
   children: React.ReactNode;
+  className?: string;
   hover?: boolean;
+  as?: "div" | "button" | "section";
 }
 
 export function Card({
   children,
   className,
   hover = true,
-  ...props
+  as: Tag = "div",
 }: CardProps) {
   return (
-    <div
+    <Tag
       className={cn(
-        "card bg-base-200 shadow-xl p-6 rounded-2xl",
-        hover && "hover:shadow-2xl transition-all",
+        "bg-base-100 dark:bg-base-300 border border-base-300 dark:border-base-100/20 rounded-2xl shadow-lg transition-all",
+        hover &&
+          "hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1 active:scale-95",
         className
       )}
-      {...props}
     >
       {children}
-    </div>
+    </Tag>
   );
 }

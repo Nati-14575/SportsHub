@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useTeamSearch } from "../../hooks/useTeamSearch";
-import HeaderSection from "../../components/team-search/HeaderSection";
-import SearchInput from "../../components/team-search/SearchInput";
-import LoadingTeamsSection from "../../components/team-search/LoadingTeamsSection";
-import ErrorSection from "../../components/team-search/ErrorSection";
+
 import {
-  EmptyInitial,
+  EmptyInitialState,
   EmptyNoResults,
-} from "../../components/team-search/EmptyState";
+} from "@/components/common/EmptyState";
 import ResultsGrid from "../../components/team-search/ResultsGrid";
+import SearchBar from "@/components/common/SearchBar";
+import LoadingState from "@/components/common/LoadingState";
+import { ErrorMessage } from "@/components/common/ErrorMessage";
+import SectionHeader from "@/components/common/SectionHeader";
 export default function TeamSearch() {
   const [search, setSearch] = useState<string>("");
   const debouncedSearch = useDebounce(search, 400);
@@ -21,14 +22,21 @@ export default function TeamSearch() {
 
   return (
     <div className="max-w-6xl mx-auto space-y-10">
-      <HeaderSection />
+      <SectionHeader
+        title="Discover Teams"
+        subtitle="Search across thousands of sports teams worldwide"
+      />
 
-      <SearchInput value={search} onChange={setSearch} />
+      <SearchBar
+        value={search}
+        onChange={setSearch}
+        placeholder="Search teams..."
+      />
 
-      {loading && <LoadingTeamsSection />}
-      {error && <ErrorSection message={error} />}
+      {loading && <LoadingState label="Searching for teams..." />}
+      {error && <ErrorMessage message={error} />}
 
-      {showInitialState && <EmptyInitial />}
+      {showInitialState && <EmptyInitialState />}
       {showNoResults && (
         <EmptyNoResults query={debouncedSearch} clear={() => setSearch("")} />
       )}

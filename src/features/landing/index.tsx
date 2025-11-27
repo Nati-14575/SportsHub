@@ -1,8 +1,8 @@
 import { TrendingUp, Users } from "lucide-react";
 import { ROUTES } from "@/constants/routes";
 
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { FeatureCard } from "@/components/common/FeatureCard";
+import SectionHeader from "@/components/common/SectionHeader";
+import FeatureCard from "@/components/common/FeatureCard";
 
 export default function HomePage() {
   return (
