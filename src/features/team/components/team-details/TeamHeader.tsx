@@ -18,13 +18,11 @@ export default function TeamHeader({ team }: { team: Team }) {
 
       {/* Info */}
       <div className="flex-1 text-center lg:text-left space-y-4">
-       
-        <H2 className="text-4xl lg:text-5xl font-heading font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+        <H2 className="text-4xl lg:text-5xl font-heading font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
           {team.strTeam}
         </H2>
 
         <P className="text-base-content/70 text-lg">{team.strLeague}</P>
-        
 
         <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-sm">
           <InfoChip icon={Flag} value={team.strCountry ?? ""} color="primary" />

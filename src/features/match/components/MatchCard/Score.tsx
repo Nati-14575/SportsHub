@@ -9,11 +9,10 @@ export function MatchCardScore({
 }) {
   const isLive = status === "Live";
   const isFinished = status === "Finished";
-  const isUpcoming = !isLive && !isFinished;
 
   return (
     <div className="text-center space-y-1">
-      <div className="text-4xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+      <div className="text-4xl font-black bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
         {home ?? "0"} : {away ?? "0"}
       </div>
 
@@ -24,9 +23,7 @@ export function MatchCardScore({
       )}
 
       {isFinished && (
-        <span className="text-xs text-gray-500 font-bold uppercase">
-          Final
-        </span>
+        <span className="text-xs text-gray-500 font-bold uppercase">Final</span>
       )}
     </div>
   );

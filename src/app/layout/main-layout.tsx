@@ -10,7 +10,7 @@ export default function MainLayout() {
         <div className="flex-1">
           <NavLink
             to={ROUTES.HOME}
-            className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:scale-105 transition-all duration-300 font-heading tracking-tight"
+            className="text-2xl lg:text-3xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent hover:scale-105 transition-all duration-300 font-heading tracking-tight"
           >
             🏆 SportsHub
           </NavLink>

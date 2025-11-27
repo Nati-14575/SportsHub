@@ -38,7 +38,7 @@ export default function SectionHeader({
       )}
 
       {/* TITLE */}
-      <H2 className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+      <H2 className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
         {title}
       </H2>
 

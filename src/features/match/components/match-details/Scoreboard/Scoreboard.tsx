@@ -32,7 +32,7 @@ export function Scoreboard({ match }: Props) {
           {isUpcoming ? (
             <div className="text-2xl font-black text-base-content/40">VS</div>
           ) : (
-            <div className="text-5xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <div className="text-5xl font-black bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
               {homeScore} : {awayScore}
             </div>
           )}

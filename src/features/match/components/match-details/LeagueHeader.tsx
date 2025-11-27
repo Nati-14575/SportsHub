@@ -32,7 +32,7 @@ export function LeagueHeader({
 
       {/* Text Content */}
       <div className="space-y-1">
-        <H2 className="font-heading text-3xl md:text-4xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+        <H2 className="font-heading text-3xl md:text-4xl bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
           {league}
         </H2>
 
