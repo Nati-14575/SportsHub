@@ -1,5 +1,6 @@
 import { Outlet, NavLink } from "react-router";
 import ThemeToggle from "@/components/ui/ThemeToggle";
+import { ROUTES } from "../../constants/routes";
 
 export default function MainLayout() {
   return (
@@ -8,7 +9,7 @@ export default function MainLayout() {
       <nav className="navbar bg-base-100/80 dark:bg-base-300/80 backdrop-blur-lg shadow-xl border-b border-base-300 dark:border-base-100/20 sticky top-0 z-50 px-4 lg:px-8 transition-colors duration-300">
         <div className="flex-1">
           <NavLink
-            to="/"
+            to={ROUTES.HOME}
             className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:scale-105 transition-all duration-300 font-heading tracking-tight"
           >
             🏆 SportsHub
@@ -19,7 +20,7 @@ export default function MainLayout() {
           <ul className="menu menu-horizontal gap-2 lg:gap-4 px-1 font-sans">
             <li>
               <NavLink
-                to="/teams"
+                to={ROUTES.TEAMS}
                 className={({ isActive }) =>
                   `btn btn-ghost rounded-btn font-semibold transition-all duration-300 hover:scale-105 gap-2 font-medium ${
                     isActive
@@ -34,7 +35,7 @@ export default function MainLayout() {
 
             <li>
               <NavLink
-                to="/live-matches"
+                to={ROUTES.LIVE_SCORES}
                 className={({ isActive }) =>
                   `btn btn-ghost rounded-btn font-semibold transition-all duration-300 hover:scale-105 gap-2 font-medium ${
                     isActive

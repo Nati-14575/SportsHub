@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
-import { api } from "@/lib/axios";
-
 import type { Match } from "../types/match.types";
-
-interface Response {
-  events: Match[] | null;
-}
+import { fetchMatchDetails } from "../api/matchApi";
 
 export function useMatchDetails(id: string) {
   const [match, setMatch] = useState<Match | null>(null);
@@ -14,9 +9,10 @@ export function useMatchDetails(id: string) {
 
   const load = async () => {
     try {
-      const res = await api.get<Response>(`/lookupevent.php?id=${id}`);
-      setMatch(res.data.events?.[0] ?? null);
-    } catch {
+      const data = await fetchMatchDetails(id);
+      setMatch(data);
+      setError("");
+    } catch (err) {
       setError("Failed to load match details.");
     } finally {
       setLoading(false);
@@ -27,5 +23,5 @@ export function useMatchDetails(id: string) {
     load();
   }, [id]);
 
-  return { match, loading, error };
+  return { match, loading, error, refetch: load };
 }

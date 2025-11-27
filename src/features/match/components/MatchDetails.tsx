@@ -4,7 +4,7 @@ import { MatchDetailsSection } from "./match-details/MatchDetailsSection";
 
 export default function MatchDetails({ matchId }: { matchId: string }) {
   const { match, loading, error } = useMatchDetails(matchId!);
-
+  console.log(match);
   if (loading)
     return (
       <div className="flex justify-center py-20">

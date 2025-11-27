@@ -16,7 +16,7 @@ export default function LiveScoreboard() {
 
       {/* Match List */}
       <div className="space-y-6">
-        {matches.map((m) => (
+        {matches?.map((m) => (
           <MatchCard key={m.idEvent} match={m} />
         ))}
       </div>

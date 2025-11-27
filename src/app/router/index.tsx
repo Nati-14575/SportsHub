@@ -1,7 +1,7 @@
 import React from "react";
 import { createBrowserRouter, Navigate } from "react-router";
 
-import { ROUTES } from "./routes";
+import { ROUTES } from "../../constants/routes";
 // Layouts
 import MainLayout from "@/app/layout/main-layout";
 import EmptyLayout from "@/app/layout/empty-layout";

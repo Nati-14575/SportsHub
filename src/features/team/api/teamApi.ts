@@ -4,11 +4,12 @@ import type {
   LookupTeamResponse,
   Team,
 } from "../types/team.types";
+import { API } from "@/constants/api";
 
 export async function searchTeams(teamName: string): Promise<Team[]> {
   if (!teamName || teamName.length < 2) return [];
 
-  const res = await api.get<SearchTeamsResponse>("searchteams.php", {
+  const res = await api.get<SearchTeamsResponse>(API.TEAMS.SEARCH, {
     params: { t: teamName },
   });
 
@@ -16,9 +17,7 @@ export async function searchTeams(teamName: string): Promise<Team[]> {
 }
 
 export async function getTeamDetails(teamId: string): Promise<Team | null> {
-  const res = await api.get<LookupTeamResponse>("lookupteam.php", {
-    params: { id: teamId },
-  });
+  const res = await api.get<LookupTeamResponse>(API.TEAMS.DETAILS(teamId));
 
   return res.data.teams?.[0] ?? null;
 }
