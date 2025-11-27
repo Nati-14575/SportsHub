@@ -9,7 +9,7 @@ interface ThemeState {
 const stored = localStorage.getItem("theme") as ThemeMode | null;
 
 const initialState: ThemeState = {
-  mode: stored ?? "light",
+  mode: stored ?? "dark",
 };
 
 const themeSlice = createSlice({
