@@ -2,10 +2,7 @@ import { useState } from "react";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useTeamSearch } from "../../hooks/useTeamSearch";
 
-import {
-  EmptyInitialState,
-  EmptyNoResults,
-} from "@/components/common/EmptyState";
+import { EmptyNoResults } from "@/components/common/EmptyState";
 import ResultsGrid from "../../components/team-search/ResultsGrid";
 import SearchBar from "@/components/common/SearchBar";
 import LoadingState from "@/components/common/LoadingState";
@@ -17,7 +14,6 @@ export default function TeamSearch() {
 
   const { data: teams, loading, error } = useTeamSearch(debouncedSearch);
 
-  const showInitialState = !debouncedSearch && !loading;
   const showNoResults = debouncedSearch && !loading && teams.length === 0;
 
   return (
@@ -36,7 +32,6 @@ export default function TeamSearch() {
       {loading && <LoadingState label="Searching for teams..." />}
       {error && <ErrorMessage message={error} />}
 
-      {showInitialState && <EmptyInitialState />}
       {showNoResults && (
         <EmptyNoResults query={debouncedSearch} clear={() => setSearch("")} />
       )}
