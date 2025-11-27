@@ -14,6 +14,11 @@ interface FeatureCardProps {
   buttonText: string;
 }
 
+const bulletColorMap = {
+  primary: "text-primary",
+  secondary: "text-secondary",
+};
+
 export default function FeatureCard({
   icon,
   title,
@@ -24,23 +29,27 @@ export default function FeatureCard({
   buttonText,
 }: FeatureCardProps) {
   return (
-    <Card>
-      <div className="flex items-center gap-4 mb-4">
+    <Card className="p-6 space-y-6 shadow-xl border border-base-300/40">
+      {/* Header */}
+      <div className="flex items-center gap-4">
         <IconBadge icon={icon} color={color} />
         <H3>{title}</H3>
       </div>
 
+      {/* Description */}
       <P>{description}</P>
 
-      <div className="space-y-2 my-6">
-        {bullets.map((text, index) => (
-          <div key={index} className="flex items-center gap-2">
-            <span className={`text-${color}`}>●</span>
-            <span>{text}</span>
+      {/* Bullets */}
+      <div className="space-y-2">
+        {bullets.map((text, i) => (
+          <div key={i} className="flex items-center gap-2">
+            <span className={bulletColorMap[color]}>●</span>
+            <span className="text-base-content/80">{text}</span>
           </div>
         ))}
       </div>
 
+      {/* CTA */}
       <NavLink to={link}>
         <Button variant={color} full>
           {buttonText}

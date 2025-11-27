@@ -11,7 +11,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <SectionHeader title="Explore Sports Data" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
             <FeatureCard
               icon={<Users className="w-8 h-8" />}
               title="Team Search & Details"

@@ -1,18 +1,28 @@
+import { Card } from "@/components/ui/Card";
+import { H3 } from "@/components/ui/Typography";
 import { Shirt } from "lucide-react";
 
-export default function JerseyCard({
-  src,
-  color,
-}: {
+const COLOR_MAP = {
+  primary: "text-primary",
+  secondary: "text-secondary",
+  accent: "text-accent",
+  info: "text-info",
+  error: "text-error",
+  success: "text-success",
+};
+
+interface JerseyCardProps {
   src: string;
-  color: string;
-}) {
+  color?: keyof typeof COLOR_MAP;
+}
+
+export default function JerseyCard({ src, color = "accent" }: JerseyCardProps) {
   return (
-    <div className="card bg-base-100 p-8 shadow-xl border rounded-3xl hover:shadow-2xl transition-all">
-      <h2 className="text-2xl font-heading font-semibold mb-6 flex items-center gap-3">
-        <Shirt className={`w-6 h-6 text-${color}`} />
+    <Card className="p-8 space-y-6">
+      <H3 className="flex items-center gap-3">
+        <Shirt className={`w-6 h-6 ${COLOR_MAP[color]}`} />
         Team Jersey
-      </h2>
+      </H3>
 
       <div className="flex justify-center">
         <img
@@ -21,6 +31,6 @@ export default function JerseyCard({
           className="h-64 object-contain hover:scale-105 transition-transform duration-300"
         />
       </div>
-    </div>
+    </Card>
   );
 }

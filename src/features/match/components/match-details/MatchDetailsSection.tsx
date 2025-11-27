@@ -2,10 +2,10 @@ import type { Match } from "../../types/match.types";
 import { MatchThumbnail } from "./MatchThumbnail";
 import { LeagueHeader } from "./LeagueHeader";
 import { Scoreboard } from "./Scoreboard/Scoreboard";
-import { MatchInfoGrid } from "./MatchInfoGrid";
 
 import { Card } from "@/components/ui/Card";
 import SectionHeader from "@/components/common/SectionHeader";
+import { MatchInfoGrid } from "./MatchInfoGrid";
 
 interface MatchDetailsSectionProps {
   match: Match;

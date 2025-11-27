@@ -21,7 +21,7 @@ export function MatchThumbnail({
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-base-100/80 via-transparent to-base-100/20 pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-t from-base-100/80 via-transparent to-base-100/20 pointer-events-none" />
 
       {/* Live Badge */}
       {isLive && (

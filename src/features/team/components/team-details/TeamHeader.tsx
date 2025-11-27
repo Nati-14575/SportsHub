@@ -1,6 +1,7 @@
 import { Calendar, Flag, Shirt } from "lucide-react";
 import type { Team } from "../../types/team.types";
 import InfoChip from "./InfoChip";
+import { H2, P } from "@/components/ui/Typography";
 
 export default function TeamHeader({ team }: { team: Team }) {
   return (
@@ -17,13 +18,13 @@ export default function TeamHeader({ team }: { team: Team }) {
 
       {/* Info */}
       <div className="flex-1 text-center lg:text-left space-y-4">
-        <h1 className="text-4xl lg:text-5xl font-heading font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+       
+        <H2 className="text-4xl lg:text-5xl font-heading font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
           {team.strTeam}
-        </h1>
+        </H2>
 
-        <p className="text-xl text-base-content/70 font-medium">
-          {team.strLeague}
-        </p>
+        <P className="text-base-content/70 text-lg">{team.strLeague}</P>
+        
 
         <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-sm">
           <InfoChip icon={Flag} value={team.strCountry ?? ""} color="primary" />

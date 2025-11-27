@@ -1,4 +1,16 @@
+import { Card } from "@/components/ui/Card";
+import { H3 } from "@/components/ui/Typography";
 import type { SocialLink } from "./TeamDetails";
+
+// Tailwind-safe static classes
+const COLOR_MAP: Record<string, string> = {
+  primary: "border-primary text-primary hover:bg-primary hover:text-primary-content",
+  secondary:
+    "border-secondary text-secondary hover:bg-secondary hover:text-secondary-content",
+  accent: "border-accent text-accent hover:bg-accent hover:text-accent-content",
+  info: "border-info text-info hover:bg-info hover:text-info-content",
+  error: "border-error text-error hover:bg-error hover:text-error-content",
+};
 
 export default function SocialLinksCard({
   links,
@@ -8,24 +20,22 @@ export default function SocialLinksCard({
   buildUrl: (url: string | null | undefined) => string;
 }) {
   return (
-    <div className="card bg-base-100 p-6 shadow-xl border rounded-3xl hover:shadow-2xl transition-all">
-      <h2 className="text-2xl font-heading font-semibold mb-4">
-        Follow the Team
-      </h2>
+    <Card className="p-6 space-y-4 shadow-xl border border-base-300/40">
+      <H3>Follow the Team</H3>
 
-      <div className="flex gap-4 justify-center lg:justify-start">
-        {links.map(({ url, icon: Icon, color }) => (
+      <div className="flex gap-4 flex-wrap">
+        {links.map(({ url, icon: Icon, color }, index) => (
           <a
-            key={url}
+            key={index}
             href={buildUrl(url)}
             target="_blank"
             rel="noopener noreferrer"
-            className={`btn btn-circle btn-outline border-${color} text-${color} hover:bg-${color} hover:text-${color}-content hover:scale-110 transition-all`}
+            className={`btn btn-circle btn-outline transition-all ${COLOR_MAP[color] ?? COLOR_MAP["primary"]}`}
           >
             <Icon className="w-5 h-5" />
           </a>
         ))}
       </div>
-    </div>
+    </Card>
   );
 }

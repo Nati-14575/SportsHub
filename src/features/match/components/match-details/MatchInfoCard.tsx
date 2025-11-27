@@ -1,8 +1,13 @@
+import { Card } from "@/components/ui/Card";
+import { H3, P } from "@/components/ui/Typography";
+import { cn } from "@/lib/utils";
+
 interface MatchInfoCardProps {
   icon: React.ReactNode;
   label: string;
   value: React.ReactNode;
   accent?: "primary" | "secondary" | "accent" | "success" | "info";
+  className?: string;
 }
 
 export function MatchInfoCard({
@@ -10,25 +15,30 @@ export function MatchInfoCard({
   label,
   value,
   accent = "primary",
+  className,
 }: MatchInfoCardProps) {
-  const accentStyles = {
+  const accentMap: Record<string, string> = {
     primary: "border-l-primary",
     secondary: "border-l-secondary",
     accent: "border-l-accent",
-    success: "border-l-green-500",
-    info: "border-l-blue-500",
+    success: "border-l-success",
+    info: "border-l-info",
   };
 
   return (
-    <div
-      className={`card bg-base-100 shadow-xl rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 border-l-4 ${accentStyles[accent]}`}
+    <Card
+      className={cn(
+        "rounded-2xl p-6 border-l-4 shadow-xl hover:shadow-2xl",
+        accentMap[accent],
+        className
+      )}
     >
       <div className="flex items-center gap-4 mb-4">
         <div className="p-3 bg-base-200 rounded-2xl">{icon}</div>
-        <h3 className="text-lg font-bold text-base-content/80">{label}</h3>
+        <H3 className="text-lg">{label}</H3>
       </div>
 
-      <div className="text-base-content">{value}</div>
-    </div>
+      <P className="text-base-content">{value}</P>
+    </Card>
   );
 }
