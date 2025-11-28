@@ -7,7 +7,7 @@ import FeatureCard from "@/features/landing/components/FeatureCard";
 export default function HomePage() {
   return (
     <div className="h-full w-full">
-      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+      <section className="px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeader 
             title="Explore Sports Data" 
