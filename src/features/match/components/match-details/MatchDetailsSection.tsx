@@ -45,6 +45,7 @@ export function MatchDetailsSection({ match }: MatchDetailsSectionProps) {
         <SectionHeader
           title="Match Information"
           subtitle="Venue, kickoff time, competition & more"
+          className="mb-4"
         />
         <MatchInfoGrid match={match} kickoff={kickoff} />
       </Card>

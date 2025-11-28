@@ -27,7 +27,7 @@ export function Badge({ children, color = "primary", className }: BadgeProps) {
   return (
     <div
       className={cn(
-        "badge badge-outline badge-sm transition-colors duration-300",
+        "badge badge-sm transition-colors duration-300",
         colors.base,
         colors.hover,
         className

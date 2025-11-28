@@ -7,6 +7,25 @@ type TypographyProps = ComponentPropsWithoutRef<"p"> & {
   children: React.ReactNode;
 };
 
+export function H1({
+  as: Tag = "h1",
+  className,
+  children,
+  ...props
+}: TypographyProps) {
+  return (
+    <Tag
+      className={cn(
+        "text-4xl md:text-5xl font-extrabold text-base-content",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </Tag>
+  );
+}
+
 export function H2({
   as: Tag = "h2",
   className,

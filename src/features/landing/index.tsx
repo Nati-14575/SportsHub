@@ -6,7 +6,7 @@ import FeatureCard from "@/components/common/FeatureCard";
 
 export default function HomePage() {
   return (
-    <div className="bg-base-100">
+    <div className="h-full">
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <SectionHeader title="Explore Sports Data" />

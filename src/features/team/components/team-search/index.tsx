@@ -21,6 +21,7 @@ export default function TeamSearch() {
       <SectionHeader
         title="Discover Teams"
         subtitle="Search across thousands of sports teams worldwide"
+        className="mt-4"
       />
 
       <SearchBar
@@ -36,7 +37,7 @@ export default function TeamSearch() {
         <EmptyNoResults query={debouncedSearch} clear={() => setSearch("")} />
       )}
 
-      {teams.length > 0 && (
+      {!loading && teams.length > 0 && (
         <ResultsGrid query={debouncedSearch} teams={teams} />
       )}
     </div>

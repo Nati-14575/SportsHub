@@ -32,6 +32,7 @@ export function MatchInfoCard({
         accentMap[accent],
         className
       )}
+      hover={true}
     >
       <div className="flex items-center gap-4 mb-4">
         <div className="p-3 bg-base-200 rounded-2xl">{icon}</div>

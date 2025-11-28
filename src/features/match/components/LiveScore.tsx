@@ -16,7 +16,7 @@ export default function LiveScoreboard() {
         icon="⚽"
         title="Live Scores"
         subtitle={
-          <Badge color="primary" className="gap-2">
+          <Badge color="primary" className="gap-2 ">
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
             Auto-updating every 15 seconds
           </Badge>

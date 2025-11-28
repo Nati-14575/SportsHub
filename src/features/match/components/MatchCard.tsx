@@ -13,7 +13,10 @@ export default function MatchCard({ match }: { match: Match }) {
 
   return (
     <Link to={`/live-matches/${match.idEvent}`}>
-      <Card className="group relative p-6 mb-5 border rounded-3xl hover:shadow-2xl hover:scale-[1.01] transition-all duration-300 overflow-hidden">
+      <Card
+        className="group relative p-6 mb-5 border rounded-3xl hover:shadow-2xl hover:scale-[1.01] transition-all duration-300 overflow-hidden"
+        hover={true}
+      >
         {/* LIVE BAR */}
         {isLive && (
           <div className="absolute top-0 left-0 right-0 h-1 bg-green-500 animate-pulse" />

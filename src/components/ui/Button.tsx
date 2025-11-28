@@ -14,7 +14,11 @@ export function Button({
 }: ButtonProps) {
   return (
     <button
-      className={cn(`btn btn-${variant}`, full && "w-full", className)}
+      className={cn(
+        `btn btn-${variant} ${variant === "secondary" ? "bg-secondary" : ""}`,
+        full && "w-full",
+        className
+      )}
       {...props}
     >
       {children}

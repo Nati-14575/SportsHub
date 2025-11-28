@@ -1,3 +1,4 @@
+import { Spinner } from "@/components/ui/Spinner";
 import { useTeamDetails } from "../../hooks/useTeamDetails";
 import { TeamDetails } from "./TeamDetails";
 
@@ -7,7 +8,7 @@ export default function TeamDetailsSection({ teamId }: { teamId?: string }) {
   if (loading) {
     return (
       <div className="flex justify-center pt-20">
-        <span className="loading loading-lg"></span>
+        <Spinner />
       </div>
     );
   }

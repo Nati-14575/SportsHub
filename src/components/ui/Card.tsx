@@ -10,7 +10,7 @@ interface CardProps {
 export function Card({
   children,
   className,
-  hover = true,
+  hover = false,
   as: Tag = "div",
 }: CardProps) {
   return (

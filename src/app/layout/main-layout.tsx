@@ -49,19 +49,15 @@ export default function MainLayout() {
             </li>
 
             <li>
-              <div className="ml-2 lg:ml-4 border-l border-base-300 dark:border-base-100/20 pl-2 lg:pl-4">
-                <ThemeToggle />
-              </div>
+              <ThemeToggle />
             </li>
           </ul>
         </div>
       </nav>
 
       {/* Main Content */}
-      <main className="flex-grow p-4 lg:p-8 mx-auto w-full">
-        {/* <div className="bg-base-100/80 dark:bg-base-300/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-base-300/50 dark:border-base-100/20 p-6 lg:p-8 transition-colors duration-300 h-full"> */}
+      <main className="flex-grow py-4 mx-auto w-full h-full bg-base-100 ">
         <Outlet />
-        {/* </div> */}
       </main>
 
       {/* Fixed Footer */}

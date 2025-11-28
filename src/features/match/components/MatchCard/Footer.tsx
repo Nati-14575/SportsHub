@@ -24,10 +24,6 @@ export function MatchCardFooter({
           {Number(spectators).toLocaleString()}
         </div>
       )}
-
-      <span className="text-primary font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-        View Details →
-      </span>
     </div>
   );
 }
