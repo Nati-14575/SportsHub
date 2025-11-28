@@ -11,7 +11,7 @@ A modern sports information web application built with React, TypeScript, and Vi
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/Nati-14575/SportsHub.git
 cd TheSportsHub
 ```
 
