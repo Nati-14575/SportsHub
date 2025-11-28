@@ -61,7 +61,7 @@ export function MatchInfoGrid({ match, kickoff }: Props) {
       )}
 
       <MatchInfoCard
-        icon={<Trophy className="w-6 h-6 text-yellow-500" />}
+        icon={<Trophy className="w-6 h-6 text-secondary" />}
         label="Competition"
         value={
           <div className="space-y-1">
@@ -78,7 +78,7 @@ export function MatchInfoGrid({ match, kickoff }: Props) {
 
       {match.intSpectators && (
         <MatchInfoCard
-          icon={<Users className="w-6 h-6 text-green-500" />}
+          icon={<Users className="w-6 h-6 text-success" />}
           label="Attendance"
           value={
             <div className="font-semibold text-lg">
@@ -90,7 +90,7 @@ export function MatchInfoGrid({ match, kickoff }: Props) {
       )}
 
       <MatchInfoCard
-        icon={<Flag className="w-6 h-6 text-blue-500" />}
+        icon={<Flag className="w-6 h-6 text-info" />}
         label="Match Status"
         value={
           <div className="font-semibold text-lg capitalize">

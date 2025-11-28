@@ -25,7 +25,7 @@ export function TeamSide({ name, badge, isWinner = false }: Props) {
         )}
 
         {isWinner && (
-          <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg border-2 border-base-100">
+          <div className="absolute -top-2 -right-2 w-8 h-8 bg-secondary rounded-full flex items-center justify-center shadow-lg border-2 border-base-100">
             <span className="text-xs font-bold">👑</span>
           </div>
         )}
@@ -33,7 +33,7 @@ export function TeamSide({ name, badge, isWinner = false }: Props) {
 
       <p
         className={`font-bold text-xl ${
-          isWinner ? "text-yellow-600" : "text-base-content"
+          isWinner ? "text-secondary" : "text-base-content"
         }`}
       >
         {name}

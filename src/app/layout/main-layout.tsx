@@ -4,32 +4,38 @@ import { ROUTES } from "../../constants/routes";
 
 export default function MainLayout() {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-base-200 via-base-100 to-primary/10 dark:from-base-300 dark:via-base-200 dark:to-primary/5 font-sans">
-      {/* Enhanced Navbar */}
-      <nav className="navbar bg-base-100/80 dark:bg-base-300/80 backdrop-blur-lg shadow-xl border-b border-base-300 dark:border-base-100/20 sticky top-0 z-50 px-4 lg:px-8 transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-base-200 via-base-100 to-primary/5 font-sans">
+      
+      <nav className="navbar bg-base-100/95 backdrop-blur-xl shadow-2xl border-b border-base-300/50 sticky top-0 z-50 px-4 sm:px-6 lg:px-8 transition-all duration-500">
         <div className="flex-1">
           <NavLink
             to={ROUTES.HOME}
-            className="text-2xl lg:text-3xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent hover:scale-105 transition-all duration-300 font-heading tracking-tight"
+            className="group text-2xl sm:text-3xl lg:text-4xl font-extrabold text-base-content hover:text-primary transition-all duration-300 font-heading tracking-tight relative"
           >
-            🏆 SportsHub
+            <span className="relative z-10 flex items-center gap-2">
+              <span className="text-primary">🏆</span>
+              <span className="bg-gradient-to-r from-base-content to-base-content/80 bg-clip-text text-transparent group-hover:from-primary group-hover:to-primary/80">
+                SportsHub
+              </span>
+            </span>
           </NavLink>
         </div>
 
         <div className="flex-none">
-          <ul className="menu menu-horizontal gap-2 lg:gap-4 px-1 font-sans">
+          <ul className="menu menu-horizontal gap-1 sm:gap-2 lg:gap-4 px-1 font-sans">
             <li>
               <NavLink
                 to={ROUTES.TEAMS}
                 className={({ isActive }) =>
-                  `btn btn-ghost rounded-btn font-semibold transition-all duration-300 hover:scale-105 gap-2 font-medium ${
+                  `btn btn-ghost rounded-xl font-semibold transition-all duration-300 gap-2 font-medium text-sm sm:text-base px-3 sm:px-4 ${
                     isActive
-                      ? "bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary"
-                      : "hover:bg-base-300 dark:hover:bg-base-200"
+                      ? "bg-gradient-to-r from-primary to-primary/80 text-primary-content shadow-xl scale-105 border-2 border-primary/50 backdrop-blur-sm"
+                      : "hover:bg-base-300/50 hover:scale-105 hover:shadow-lg"
                   }`
                 }
               >
-                👥 Teams
+                <span className="text-lg sm:text-xl">👥</span>
+                <span className="hidden sm:inline">Teams</span>
               </NavLink>
             </li>
 
@@ -37,14 +43,15 @@ export default function MainLayout() {
               <NavLink
                 to={ROUTES.LIVE_SCORES}
                 className={({ isActive }) =>
-                  `btn btn-ghost rounded-btn font-semibold transition-all duration-300 hover:scale-105 gap-2 font-medium ${
+                  `btn btn-ghost rounded-xl font-semibold transition-all duration-300 gap-2 font-medium text-sm sm:text-base px-3 sm:px-4 ${
                     isActive
-                      ? "bg-secondary text-secondary-content shadow-lg scale-105 border-2 border-secondary"
-                      : "hover:bg-base-300 dark:hover:bg-base-200"
+                      ? "bg-gradient-to-r from-secondary to-secondary/80 text-secondary-content shadow-xl scale-105 border-2 border-secondary/50 backdrop-blur-sm"
+                      : "hover:bg-base-300/50 hover:scale-105 hover:shadow-lg"
                   }`
                 }
               >
-                ⚡ Live Scores
+                <span className="text-lg sm:text-xl">⚡</span>
+                <span className="hidden sm:inline">Live Scores</span>
               </NavLink>
             </li>
 
@@ -55,15 +62,14 @@ export default function MainLayout() {
         </div>
       </nav>
 
-      {/* Main Content */}
-      <main className="flex-grow py-4 mx-auto w-full h-full bg-base-100 ">
+      
+      <main className="flex-grow py-6 sm:py-8 lg:py-12 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <Outlet />
       </main>
 
-      {/* Fixed Footer */}
-      <footer className="bg-base-300/30 dark:bg-base-300/10 border-t border-base-500 dark:border-base-100/20 py-6 transition-colors duration-300 mt-auto">
-        <div className="max-w-7xl mx-auto px-4 text-center text-base-content/60 dark:text-base-content/40 font-sans">
-          <p className="text-sm">
+      <footer className="bg-gradient-to-t from-base-300/40 via-base-300/20 to-transparent border-t border-base-300/30 py-8 sm:py-10 transition-colors duration-300 mt-auto backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-sm sm:text-base text-base-content/60 font-medium">
             © 2024 SportsHub. The ultimate sports destination.
           </p>
         </div>

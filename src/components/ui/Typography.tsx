@@ -16,7 +16,7 @@ export function H1({
   return (
     <Tag
       className={cn(
-        "text-4xl md:text-5xl font-extrabold text-base-content",
+        "text-4xl md:text-4xl font-extrabold text-base-content",
         className
       )}
       {...props}

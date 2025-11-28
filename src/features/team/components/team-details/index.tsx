@@ -16,7 +16,7 @@ export default function TeamDetailsSection({ teamId }: { teamId?: string }) {
   if (error || !team) {
     return (
       <div className="text-center pt-20">
-        <p className="text-red-400">{error ?? "Team not found."}</p>
+        <p className="text-error">{error ?? "Team not found."}</p>
       </div>
     );
   }

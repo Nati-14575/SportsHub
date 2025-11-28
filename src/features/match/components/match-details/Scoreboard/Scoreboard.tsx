@@ -1,6 +1,5 @@
 import type { Match } from "@/features/match/types/match.types";
 import { TeamSide } from "./TeamSide";
-import { Card } from "@/components/ui/Card";
 import { LiveBadge } from "../LiveBadge";
 import { getMatchStatus } from "@/features/match/utils/getMatchStatus";
 
@@ -22,7 +21,7 @@ export function Scoreboard({ match }: Props) {
   const awayWins = isFinished && Number(awayScore) > Number(homeScore);
 
   return (
-    <Card className="grid grid-cols-3 items-center gap-8" hover={true}>
+    <div className="grid grid-cols-3 items-center gap-8">
       <TeamSide
         name={match.strHomeTeam}
         badge={match.strHomeTeamBadge}
@@ -46,6 +45,6 @@ export function Scoreboard({ match }: Props) {
         badge={match.strAwayTeamBadge}
         isWinner={awayWins}
       />
-    </Card>
+    </div>
   );
 }

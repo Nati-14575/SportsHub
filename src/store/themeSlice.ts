@@ -1,15 +1,21 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
-export type ThemeMode = "light" | "dark";
+export type ThemeMode = "sportshub" | "sportshub-dark";
 
 interface ThemeState {
   mode: ThemeMode;
 }
 
 const stored = localStorage.getItem("theme") as ThemeMode | null;
+const initialMode = stored ?? "sportshub-dark";
+
+// Initialize theme immediately on module load (before React)
+if (typeof document !== "undefined") {
+  document.documentElement.setAttribute("data-theme", initialMode);
+}
 
 const initialState: ThemeState = {
-  mode: stored ?? "dark",
+  mode: initialMode,
 };
 
 const themeSlice = createSlice({
@@ -23,7 +29,7 @@ const themeSlice = createSlice({
     },
 
     toggleTheme: (state) => {
-      state.mode = state.mode === "light" ? "dark" : "light";
+      state.mode = state.mode === "sportshub" ? "sportshub-dark" : "sportshub";
       localStorage.setItem("theme", state.mode);
       document.documentElement.setAttribute("data-theme", state.mode);
     },

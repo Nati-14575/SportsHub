@@ -11,7 +11,7 @@ export default function LiveScoreboard() {
 
   return (
     <div className="max-w-5xl mx-auto space-y-10">
-      {/* --- PAGE HEADER --- */}
+      {/* PAGE HEADER */}
       <SectionHeader
         icon="⚽"
         title="Live Scores"
@@ -23,7 +23,7 @@ export default function LiveScoreboard() {
         }
       />
 
-      {/* --- LOADING --- */}
+      {/* LOADING */}
       {loading && (
         <div className="flex flex-col items-center justify-center py-12 space-y-4">
           <Spinner size="lg" color="primary" />
@@ -33,10 +33,10 @@ export default function LiveScoreboard() {
         </div>
       )}
 
-      {/* --- ERROR --- */}
+      {/* ERROR */}
       {error && <ErrorMessage message={error} />}
 
-      {/* --- NO MATCHES --- */}
+      {/* NO MATCHES */}
       {!loading && matches.length === 0 && (
         <EmptyInitialState
           title="No live matches at the moment"
@@ -44,7 +44,7 @@ export default function LiveScoreboard() {
         />
       )}
 
-      {/* --- MATCH LIST --- */}
+      {/* MATCH LIST */}
       <div className="space-y-6">
         {matches?.map((m) => (
           <MatchCard key={m.idEvent} match={m} />

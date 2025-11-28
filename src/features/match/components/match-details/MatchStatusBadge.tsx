@@ -4,9 +4,9 @@ interface Props {
 
 export function MatchStatusBadge({ status }: Props) {
   const MAP = {
-    Live: { color: "bg-red-500 text-white", icon: "🔴" },
-    Finished: { color: "bg-gray-600 text-white", icon: "⚫" },
-    "Not Started": { color: "bg-blue-500 text-white", icon: "🔵" },
+    Live: { color: "bg-primary text-white", icon: "🔴" },
+    Finished: { color: "bg-neutral text-white", icon: "⚫" },
+    "Not Started": { color: "bg-info text-white", icon: "🔵" },
   };
 
   const config = MAP[status as keyof typeof MAP] || MAP["Not Started"];

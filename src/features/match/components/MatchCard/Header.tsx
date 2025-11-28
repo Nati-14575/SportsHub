@@ -14,7 +14,7 @@ export function MatchCardHeader({
     <div className="flex items-center justify-center gap-3 mb-4">
       {league && (
         <Badge color="accent" className="flex items-center gap-2">
-          <Trophy className="w-4 h-4 text-yellow-500" />
+          <Trophy className="w-4 h-4 text-secondary" />
           {league}
         </Badge>
       )}

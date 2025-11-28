@@ -10,15 +10,10 @@ export default function ThemeToggle() {
   return (
     <Button
       variant="ghost"
-      className="
-        btn-square
-        hover:border-base-300
-        dark:hover:border-white/20
-        transition-all
-      "
+      className="btn-square hover:border-base-300 transition-all"
       onClick={() => dispatch(toggleTheme())}
     >
-      {mode === "light" ? <MoonIcon size={18} /> : <SunIcon size={18} />}
+      {mode === "sportshub" ? <MoonIcon size={18} /> : <SunIcon size={18} />}
     </Button>
   );
 }

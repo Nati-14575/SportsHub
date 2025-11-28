@@ -1,7 +1,7 @@
 export const ROUTES = {
   HOME: "/",
-  TEAMS: "/teams",
-  TEAM_DETAILS: "/teams/:teamId",
-  LIVE_SCORES: "/live-matches",
-  MATCH_DETAILS: "/live-matches/:matchId",
+  TEAMS: "/team",
+  TEAM_DETAILS: "/team/:teamId",
+  LIVE_SCORES: "/match",
+  MATCH_DETAILS: "/match/:matchId",
 };

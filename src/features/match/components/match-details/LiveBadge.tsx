@@ -4,7 +4,7 @@ export function LiveBadge({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "flex items-center gap-2 bg-red-600 text-white px-4 py-2",
+        "flex items-center gap-2 bg-primary text-white px-4 py-2",
         "rounded-full font-bold text-sm shadow-lg animate-pulse",
         className
       )}

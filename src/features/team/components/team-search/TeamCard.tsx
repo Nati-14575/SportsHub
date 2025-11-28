@@ -5,6 +5,7 @@ import { CardImage } from "@/components/ui/CardImage";
 import { CardTitle } from "@/components/ui/CardTitle";
 import { Badge } from "@/components/ui/Badge";
 import { ButtonGhostFade } from "@/components/ui/ButtonGhostFade";
+import { ROUTES } from "@/constants/routes";
 import type { Team } from "../../types/team.types";
 
 interface Props {
@@ -13,7 +14,7 @@ interface Props {
 
 export default function TeamCard({ team }: Props) {
   return (
-    <Link to={`/teams/${team.idTeam}`} className="group block">
+    <Link to={ROUTES.TEAM_DETAILS.replace(":teamId", team.idTeam)} className="group block">
       <Card className="overflow-hidden">
         <CardImage src={team.strBadge} alt={team.strTeam} />
 

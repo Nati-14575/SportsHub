@@ -12,10 +12,19 @@ export function Button({
   className,
   ...props
 }: ButtonProps) {
+  // Use DaisyUI's built-in button classes for proper theme support
+  const variantClasses = {
+    primary: "btn-primary",
+    secondary: "btn-secondary",
+    accent: "btn-accent",
+    ghost: "btn-ghost",
+  };
+
   return (
     <button
       className={cn(
-        `btn btn-${variant} ${variant === "secondary" ? "bg-secondary" : ""}`,
+        "btn rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95",
+        variantClasses[variant],
         full && "w-full",
         className
       )}

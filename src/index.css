@@ -1,22 +1,84 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Bebas+Neue&display=swap");
 @import "tailwindcss";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 @plugin "daisyui";
 
-@layer base {
-  html {
-    font-family: "Inter", system-ui, sans-serif;
-  }
+/* CUSTOM THEME */
+@plugin "daisyui/theme" {
+  name: "sportshub";
+  default: true; 
+  prefersdark: "sportshub-dark"; 
+  color-scheme: light;
+  
+  --color-base-100: #ffffff;
+  --color-base-200: #f3f4f6;
+  --color-base-300: #e5e7eb;
+  --color-base-content: #1f2937;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Poppins", system-ui, sans-serif;
-  }
+  --color-primary: #dc2626;
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #f59e0b;
+  --color-secondary-content: #ffffff;
+
+  --color-accent: #2563eb;
+  --color-accent-content: #ffffff;
+
+  --color-neutral: #1f2937;
+  --color-neutral-content: #ffffff;
+
+  --color-info: #3b82f6;
+  --color-info-content: #ffffff;
+
+  --color-success: #10b981;
+  --color-success-content: #ffffff;
+
+  --color-warning: #f59e0b;
+  --color-warning-content: #1f2937;
+
+  --color-error: #ef4444;
+  --color-error-content: #ffffff;
+
+  --radius-selector: 1rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+/* DARK THEME */
+@plugin "daisyui/theme" {
+  name: "sportshub-dark";
+  color-scheme: dark;
+
+  --color-base-100: #0f172a;
+  --color-base-200: #1e293b;
+  --color-base-300: #334155;
+  --color-base-content: #e2e8f0;
+
+  --color-primary: #ef4444;
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #fbbf24;
+  --color-secondary-content: #ffffff;
+
+  --color-accent: #60a5fa;
+  --color-accent-content: #ffffff;
+
+  --color-neutral: #111827;
+  --color-neutral-content: #e5e7eb;
+
+  --color-info: #3b82f6;
+  --color-info-content: #ffffff;
+
+  --color-success: #10b981;
+  --color-success-content: #ffffff;
+
+  --color-warning: #f59e0b;
+  --color-warning-content: #111827;
+
+  --color-error: #ef4444;
+  --color-error-content: #ffffff;
 }

@@ -19,7 +19,7 @@ export function MatchDetailsSection({ match }: MatchDetailsSectionProps) {
 
   return (
     <div className="space-y-10">
-      {/* === Thumbnail section === */}
+      {/*  Thumbnail section  */}
       {match.strThumb && (
         <MatchThumbnail
           thumbnail={match.strThumb}
@@ -35,12 +35,12 @@ export function MatchDetailsSection({ match }: MatchDetailsSectionProps) {
         status={match.strStatus}
       />
 
-      {/* === Scoreboard === */}
+      {/*  Scoreboard  */}
       <Card className="p-6 shadow-xl border border-base-300/50">
         <Scoreboard match={match} />
       </Card>
 
-      {/* === Match Info Grid === */}
+      {/*  Match Info Grid  */}
       <Card className="p-6 shadow-xl border border-base-300/50">
         <SectionHeader
           title="Match Information"

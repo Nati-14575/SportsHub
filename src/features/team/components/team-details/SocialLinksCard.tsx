@@ -2,7 +2,6 @@ import { Card } from "@/components/ui/Card";
 import { H3 } from "@/components/ui/Typography";
 import type { SocialLink } from "./TeamDetails";
 
-// Tailwind-safe static classes
 const COLOR_MAP: Record<string, string> = {
   primary: "border-primary text-primary hover:bg-primary hover:text-primary-content",
   secondary:

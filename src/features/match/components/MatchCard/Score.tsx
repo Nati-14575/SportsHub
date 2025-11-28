@@ -17,13 +17,13 @@ export function MatchCardScore({
       </div>
 
       {isLive && (
-        <span className="text-xs text-red-500 font-bold animate-pulse">
+        <span className="text-xs text-primary font-bold animate-pulse">
           Live Now
         </span>
       )}
 
       {isFinished && (
-        <span className="text-xs text-gray-500 font-bold uppercase">Final</span>
+        <span className="text-xs text-base-content/60 font-bold uppercase">Final</span>
       )}
     </div>
   );

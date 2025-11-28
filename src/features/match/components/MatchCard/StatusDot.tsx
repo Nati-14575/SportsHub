@@ -1,9 +1,9 @@
 export function StatusDot({ status }: { status?: string | null }) {
   const color = status === "Live"
-    ? "bg-green-500"
+    ? "bg-success"
     : status === "Finished"
-    ? "bg-gray-500"
-    : "bg-blue-500";
+    ? "bg-neutral"
+    : "bg-info";
 
   return (
     <span className={`w-3 h-3 rounded-full ${color} ${status === "Live" ? "animate-ping" : ""}`} />

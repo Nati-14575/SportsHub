@@ -13,7 +13,7 @@ export function TeamBadgeMini({
 }) {
   return (
     <div className={`flex flex-col items-center gap-2 ${align === "right" ? "text-right" : "text-left"}`}>
-      <div className={`relative ${isWinner ? "ring-2 ring-yellow-400 ring-offset-2" : ""}`}>
+      <div className={`relative ${isWinner ? "ring-2 ring-secondary ring-offset-2" : ""}`}>
         {badge ? (
           <img src={badge} alt={name} className="w-14 h-14 object-contain" />
         ) : (
@@ -23,11 +23,11 @@ export function TeamBadgeMini({
         )}
 
         {isWinner && (
-          <div className="absolute -top-2 -right-2 text-yellow-600 text-xs">👑</div>
+          <div className="absolute -top-2 -right-2 text-secondary text-xs">👑</div>
         )}
       </div>
 
-      <span className={`font-bold text-sm max-w-[100px] truncate ${isWinner ? "text-yellow-600" : ""}`}>
+      <span className={`font-bold text-sm max-w-[100px] truncate ${isWinner ? "text-secondary" : ""}`}>
         {name}
       </span>
     </div>

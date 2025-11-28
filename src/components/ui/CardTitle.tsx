@@ -1,6 +1,8 @@
+import { H2 } from "./Typography";
+
 export function CardTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h2
+    <H2
       className="
       card-title text-xl font-heading font-bold text-center 
       text-base-content group-hover:text-primary 
@@ -8,6 +10,6 @@ export function CardTitle({ children }: { children: React.ReactNode }) {
     "
     >
       {children}
-    </h2>
+    </H2>
   );
 }

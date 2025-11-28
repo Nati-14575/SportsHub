@@ -19,7 +19,6 @@ export function CardImage({
     <figure
       className={cn(
         "p-6 bg-gradient-to-br from-base-200 via-base-100 to-primary/5",
-        "dark:from-base-300 dark:via-base-200 dark:to-primary/10",
         "transition-all duration-300 group-hover:from-primary/10 group-hover:to-secondary/5",
         "flex items-center justify-center",
         rounded,
